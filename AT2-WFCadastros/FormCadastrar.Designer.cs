@@ -38,8 +38,8 @@
             lblCategoria = new Label();
             mtbCodigo = new MaskedTextBox();
             gbxStatus = new GroupBox();
-            rdbAtivo = new RadioButton();
             rdbInativo = new RadioButton();
+            rdbAtivo = new RadioButton();
             rtbDescricao = new RichTextBox();
             gbxStatus.SuspendLayout();
             SuspendLayout();
@@ -91,7 +91,7 @@
             btnSalvar.Text = "Salvar";
             btnSalvar.TextAlign = ContentAlignment.MiddleRight;
             btnSalvar.UseVisualStyleBackColor = false;
-           
+            btnSalvar.Click += btnSalvar_Click_1;
             // 
             // cbxCategoria
             // 
@@ -131,17 +131,6 @@
             gbxStatus.TabStop = false;
             gbxStatus.Text = "Status";
             // 
-            // rdbAtivo
-            // 
-            rdbAtivo.AutoSize = true;
-            rdbAtivo.Location = new Point(14, 20);
-            rdbAtivo.Name = "rdbAtivo";
-            rdbAtivo.Size = new Size(53, 19);
-            rdbAtivo.TabIndex = 0;
-            rdbAtivo.TabStop = true;
-            rdbAtivo.Text = "Ativo";
-            rdbAtivo.UseVisualStyleBackColor = true;
-            // 
             // rdbInativo
             // 
             rdbInativo.AutoSize = true;
@@ -152,6 +141,17 @@
             rdbInativo.TabStop = true;
             rdbInativo.Text = "Inativo";
             rdbInativo.UseVisualStyleBackColor = true;
+            // 
+            // rdbAtivo
+            // 
+            rdbAtivo.AutoSize = true;
+            rdbAtivo.Location = new Point(14, 20);
+            rdbAtivo.Name = "rdbAtivo";
+            rdbAtivo.Size = new Size(53, 19);
+            rdbAtivo.TabIndex = 0;
+            rdbAtivo.TabStop = true;
+            rdbAtivo.Text = "Ativo";
+            rdbAtivo.UseVisualStyleBackColor = true;
             // 
             // rtbDescricao
             // 
@@ -181,11 +181,11 @@
             Name = "Cadastrar";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastrar";
-            Load += Cadastrar_Load;
             gbxStatus.ResumeLayout(false);
             gbxStatus.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+            
         }
 
         #endregion
