@@ -1,21 +1,24 @@
 ﻿
 namespace AT2_WFCadastros
 {
-    internal class Categoria
+    public enum EStatus
     {
-        private int codigo;
-        private string nome;
-        private string descricao;
-        private string status;
-        private DateTime dataCadastro;
-
-        public Categoria(int codigo, string nome, string descricao, string status, DateTime dataCadastro)
-        {
-            this.codigo = codigo;
-            this.nome = nome;
-            this.descricao = descricao;
-            this.status = status;
-            this.dataCadastro = dataCadastro;
-        }
+        Ativo = 1,
+        Inativo
     }
-}
+    public class Categoria
+    {
+        public int Codigo { get; set; }
+        public string? Nome { get; set; }
+        public string? Descricao { get; set; }
+        public EStatus Status { get; set; }
+        public DateTime DataCadastro { get; set; }
+
+
+        public static List<Categoria>
+            ListaCategorias = new List<Categoria>();
+
+    }
+
+
+ }

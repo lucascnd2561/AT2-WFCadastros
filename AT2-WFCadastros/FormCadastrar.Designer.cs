@@ -33,15 +33,15 @@
             lblNome = new Label();
             txtNome = new TextBox();
             lblDescricao = new Label();
-            txtDescricao = new TextBox();
-            lblStatus = new Label();
-            dtpDataCadastro = new DateTimePicker();
-            lblDatadeCadastro = new Label();
             btnSalvar = new Button();
             cbxCategoria = new ComboBox();
             lblCategoria = new Label();
             mtbCodigo = new MaskedTextBox();
-            rtbStatus = new RichTextBox();
+            gbxStatus = new GroupBox();
+            rdbAtivo = new RadioButton();
+            rdbInativo = new RadioButton();
+            rtbDescricao = new RichTextBox();
+            gbxStatus.SuspendLayout();
             SuspendLayout();
             // 
             // lblCodigo
@@ -56,7 +56,7 @@
             // lblNome
             // 
             lblNome.AutoSize = true;
-            lblNome.Location = new Point(49, 64);
+            lblNome.Location = new Point(49, 79);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(40, 15);
             lblNome.TabIndex = 2;
@@ -64,52 +64,19 @@
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(49, 82);
+            txtNome.Location = new Point(49, 100);
             txtNome.Name = "txtNome";
-            txtNome.Size = new Size(279, 23);
+            txtNome.Size = new Size(265, 23);
             txtNome.TabIndex = 3;
             // 
             // lblDescricao
             // 
             lblDescricao.AutoSize = true;
-            lblDescricao.Location = new Point(49, 187);
+            lblDescricao.Location = new Point(49, 188);
             lblDescricao.Name = "lblDescricao";
             lblDescricao.Size = new Size(58, 15);
             lblDescricao.TabIndex = 4;
             lblDescricao.Text = "Descrição";
-            // 
-            // txtDescricao
-            // 
-            txtDescricao.Location = new Point(49, 205);
-            txtDescricao.Multiline = true;
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(279, 112);
-            txtDescricao.TabIndex = 5;
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(186, 9);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(39, 15);
-            lblStatus.TabIndex = 6;
-            lblStatus.Text = "Status";
-            // 
-            // dtpDataCadastro
-            // 
-            dtpDataCadastro.Location = new Point(201, 149);
-            dtpDataCadastro.Name = "dtpDataCadastro";
-            dtpDataCadastro.Size = new Size(127, 23);
-            dtpDataCadastro.TabIndex = 8;
-            // 
-            // lblDatadeCadastro
-            // 
-            lblDatadeCadastro.AutoSize = true;
-            lblDatadeCadastro.Location = new Point(201, 122);
-            lblDatadeCadastro.Name = "lblDatadeCadastro";
-            lblDatadeCadastro.Size = new Size(97, 15);
-            lblDatadeCadastro.TabIndex = 9;
-            lblDatadeCadastro.Text = "Data de Cadastro";
             // 
             // btnSalvar
             // 
@@ -117,21 +84,21 @@
             btnSalvar.ForeColor = Color.Red;
             btnSalvar.Image = (Image)resources.GetObject("btnSalvar.Image");
             btnSalvar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSalvar.Location = new Point(228, 358);
+            btnSalvar.Location = new Point(214, 320);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(100, 53);
             btnSalvar.TabIndex = 10;
             btnSalvar.Text = "Salvar";
             btnSalvar.TextAlign = ContentAlignment.MiddleRight;
             btnSalvar.UseVisualStyleBackColor = false;
-            btnSalvar.Click += btnSalvar_Click_1;
+           
             // 
             // cbxCategoria
             // 
             cbxCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxCategoria.FormattingEnabled = true;
             cbxCategoria.Items.AddRange(new object[] { "Açougue", "", "HortiFruti", "", "Eletrônicos", "", "Limpeza", "", "Padaria", "", "Frios", "", "Laticínios", "", "Peixaria", "Bazar" });
-            cbxCategoria.Location = new Point(49, 149);
+            cbxCategoria.Location = new Point(49, 153);
             cbxCategoria.Name = "cbxCategoria";
             cbxCategoria.Size = new Size(134, 23);
             cbxCategoria.TabIndex = 11;
@@ -139,7 +106,7 @@
             // lblCategoria
             // 
             lblCategoria.AutoSize = true;
-            lblCategoria.Location = new Point(49, 122);
+            lblCategoria.Location = new Point(49, 135);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(58, 15);
             lblCategoria.TabIndex = 12;
@@ -153,28 +120,58 @@
             mtbCodigo.Size = new Size(100, 23);
             mtbCodigo.TabIndex = 13;
             // 
-            // rtbStatus
+            // gbxStatus
             // 
-            rtbStatus.Location = new Point(186, 27);
-            rtbStatus.Name = "rtbStatus";
-            rtbStatus.Size = new Size(142, 37);
-            rtbStatus.TabIndex = 14;
-            rtbStatus.Text = "Ativo    [  ]\nInativo [  ]";
+            gbxStatus.Controls.Add(rdbInativo);
+            gbxStatus.Controls.Add(rdbAtivo);
+            gbxStatus.Location = new Point(173, 27);
+            gbxStatus.Name = "gbxStatus";
+            gbxStatus.Size = new Size(141, 67);
+            gbxStatus.TabIndex = 14;
+            gbxStatus.TabStop = false;
+            gbxStatus.Text = "Status";
+            // 
+            // rdbAtivo
+            // 
+            rdbAtivo.AutoSize = true;
+            rdbAtivo.Location = new Point(14, 20);
+            rdbAtivo.Name = "rdbAtivo";
+            rdbAtivo.Size = new Size(53, 19);
+            rdbAtivo.TabIndex = 0;
+            rdbAtivo.TabStop = true;
+            rdbAtivo.Text = "Ativo";
+            rdbAtivo.UseVisualStyleBackColor = true;
+            // 
+            // rdbInativo
+            // 
+            rdbInativo.AutoSize = true;
+            rdbInativo.Location = new Point(14, 42);
+            rdbInativo.Name = "rdbInativo";
+            rdbInativo.Size = new Size(61, 19);
+            rdbInativo.TabIndex = 1;
+            rdbInativo.TabStop = true;
+            rdbInativo.Text = "Inativo";
+            rdbInativo.UseVisualStyleBackColor = true;
+            // 
+            // rtbDescricao
+            // 
+            rtbDescricao.Location = new Point(49, 206);
+            rtbDescricao.Name = "rtbDescricao";
+            rtbDescricao.Size = new Size(265, 96);
+            rtbDescricao.TabIndex = 15;
+            rtbDescricao.Text = "";
             // 
             // Cadastrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 450);
-            Controls.Add(rtbStatus);
+            ClientSize = new Size(349, 400);
+            Controls.Add(rtbDescricao);
+            Controls.Add(gbxStatus);
             Controls.Add(mtbCodigo);
             Controls.Add(lblCategoria);
             Controls.Add(cbxCategoria);
             Controls.Add(btnSalvar);
-            Controls.Add(lblDatadeCadastro);
-            Controls.Add(dtpDataCadastro);
-            Controls.Add(lblStatus);
-            Controls.Add(txtDescricao);
             Controls.Add(lblDescricao);
             Controls.Add(txtNome);
             Controls.Add(lblNome);
@@ -185,6 +182,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastrar";
             Load += Cadastrar_Load;
+            gbxStatus.ResumeLayout(false);
+            gbxStatus.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,14 +194,13 @@
         private Label lblNome;
         private TextBox txtNome;
         private Label lblDescricao;
-        private TextBox txtDescricao;
-        private Label lblStatus;
-        private DateTimePicker dtpDataCadastro;
-        private Label lblDatadeCadastro;
         private Button btnSalvar;
         private ComboBox cbxCategoria;
         private Label lblCategoria;
         private MaskedTextBox mtbCodigo;
-        private RichTextBox rtbStatus;
+        private GroupBox gbxStatus;
+        private RadioButton rdbInativo;
+        private RadioButton rdbAtivo;
+        private RichTextBox rtbDescricao;
     }
 }

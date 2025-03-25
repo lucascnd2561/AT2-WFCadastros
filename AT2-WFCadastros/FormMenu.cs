@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AT2_WFCadastros
 {
-    public partial class Menu : Form
+    public partial class FormMenu : Form
     {
-        public Menu()
+        public FormMenu()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace AT2_WFCadastros
 
         private void mnsListar_Click(object sender, EventArgs e)
         {
-            Listagem form = new Listagem();
+            FormListar form = new FormListar();
             form.ShowDialog();
         }
 

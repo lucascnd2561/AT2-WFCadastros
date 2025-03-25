@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace AT2_WFCadastros
 {
-    public partial class Listagem : Form
+    public partial class FormListar : Form
     {
-        public Listagem()
+        public FormListar()
         {
             InitializeComponent();
 
         }
-
-
+          
+       
 
         private void dgvListagem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvListagem.DataSource = Categoria.ListaProduto;
+            dgvListarCategoria.DataSource = Categoria.ListaCategorias;
 
         }
     }

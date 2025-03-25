@@ -1,6 +1,6 @@
 ﻿namespace AT2_WFCadastros
 {
-    partial class Listagem
+    partial class FormListar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvListagem = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)dgvListagem).BeginInit();
+            dgvListarCategoria = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvListarCategoria).BeginInit();
             SuspendLayout();
             // 
-            // dgvListagem
+            // dgvListarCategoria
             // 
-            dgvListagem.BorderStyle = BorderStyle.Fixed3D;
-            dgvListagem.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvListagem.Dock = DockStyle.Fill;
-            dgvListagem.Location = new Point(0, 0);
-            dgvListagem.Name = "dgvListagem";
-            dgvListagem.Size = new Size(800, 450);
-            dgvListagem.TabIndex = 0;
-            dgvListagem.CellContentClick += dgvListagem_CellContentClick;
+            dgvListarCategoria.BorderStyle = BorderStyle.Fixed3D;
+            dgvListarCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvListarCategoria.Dock = DockStyle.Fill;
+            dgvListarCategoria.Location = new Point(0, 0);
+            dgvListarCategoria.Name = "dgvListarCategoria";
+            dgvListarCategoria.Size = new Size(800, 450);
+            dgvListarCategoria.TabIndex = 0;
+            dgvListarCategoria.CellContentClick += dgvListagem_CellContentClick;
             // 
-            // Listagem
+            // FormListar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dgvListagem);
+            Controls.Add(dgvListarCategoria);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Listagem";
+            Name = "FormListar";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Listagem";
-            ((System.ComponentModel.ISupportInitialize)dgvListagem).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvListarCategoria).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dgvListagem;
+        private DataGridView dgvListarCategoria;
     }
 }

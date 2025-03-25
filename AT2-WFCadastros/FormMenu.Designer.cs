@@ -1,6 +1,6 @@
 ﻿namespace AT2_WFCadastros
 {
-    partial class Menu
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             mnsMenu = new MenuStrip();
             mnsCadastrar = new ToolStripMenuItem();
             mnsListar = new ToolStripMenuItem();
